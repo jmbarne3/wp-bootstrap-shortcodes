@@ -44,8 +44,11 @@ if ( ! class_exists( 'WPBSSC_Button_Shortcode' ) ) {
                 'size'        => false
             ), $atts );
 
-            $colors = apply_filters( 'wpbssc_btn_colors', self::$colors );
-            $sizes  = apply_filters( 'wpbssc_btn_sizes', self::$sizes );
+            $colors = self::$colors;
+            $sizes = self::$sizes;
+
+            $colors = apply_filters( 'wpbssc_btn_colors', $colors );
+            $sizes  = apply_filters( 'wpbssc_btn_sizes', $sizes );
 
             $outline = filter_var( $atts['outline'], FILTER_VALIDATE_BOOLEAN );
             $block   = filter_var( $atts['block'], FILTER_VALIDATE_BOOLEAN );
@@ -76,7 +79,7 @@ if ( ! class_exists( 'WPBSSC_Button_Shortcode' ) ) {
             }
 
             // Add color size
-            if ( $size && in_array( $atts['size'], $sizes ) ) {
+            if ( isset( $atts['size'] ) && in_array( $atts['size'], $sizes ) ) {
                 if ( $atts['size'] !== 'md' ) {
                     $classes[] = 'btn-' . $atts['size'];
                 }
