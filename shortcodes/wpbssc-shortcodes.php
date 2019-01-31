@@ -6,6 +6,7 @@ include_once 'wpbssc-container-sc.php';
 include_once 'wpbssc-row-sc.php';
 include_once 'wpbssc-col-sc.php';
 include_once 'wpbssc-button-sc.php';
+include_once 'wpbssc-icon-sc.php';
 
 if ( ! class_exists( 'WPBSSC_Shortcodes' ) ) {
     class WPBSSC_Shortcodes {
@@ -15,7 +16,8 @@ if ( ! class_exists( 'WPBSSC_Shortcodes' ) ) {
                 'container' => 'Container',
                 'row'       => 'Row',
                 'col'       => 'Col',
-                'button'    => 'Button'
+                'button'    => 'Button',
+                'icon'      => 'Icon'
             );
 
         /**
